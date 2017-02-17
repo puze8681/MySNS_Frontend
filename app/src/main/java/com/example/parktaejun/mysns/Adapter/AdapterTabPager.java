@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.parktaejun.mysns.Fragment.FragmentChatting;
+import com.example.parktaejun.mysns.Fragment.FragmentChat;
 import com.example.parktaejun.mysns.Fragment.FragmentTimeLine;
 
 
@@ -16,11 +16,11 @@ import com.example.parktaejun.mysns.Fragment.FragmentTimeLine;
  * Created by parktaejun on 2017. 2. 10..
  */
 
-public class TabPagerAdapter extends FragmentStatePagerAdapter {
+public class AdapterTabPager extends FragmentStatePagerAdapter {
 
     private int tabCount;
 
-    public TabPagerAdapter(FragmentManager fm, int tabCount){
+    public AdapterTabPager(FragmentManager fm, int tabCount){
         super(fm);
         this.tabCount = tabCount;
     }
@@ -33,8 +33,8 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
                 FragmentTimeLine fragmentTimeLine = new FragmentTimeLine();
                 return fragmentTimeLine;
             case 1:
-                FragmentChatting fragmentChatting = new FragmentChatting();
-                return fragmentChatting;
+                FragmentChat fragmentChat = new FragmentChat();
+                return fragmentChat;
             default:
                 return null;
         }

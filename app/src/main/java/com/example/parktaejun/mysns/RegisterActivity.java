@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        user_id = (EditText)findViewById(R.id.login_id);
+        user_id = (EditText)findViewById(R.id.user_id);
         user_pw = (EditText)findViewById(R.id.user_pw);
         user_name = (EditText)findViewById(R.id.user_name);
 
@@ -51,6 +51,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다 ... ", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
+                        }else if(response.code() == 400){
+                            Toast.makeText(getApplicationContext(), "PARAM MISSING ... ", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "UNKNOWN ERR ... ", Toast.LENGTH_SHORT).show();
                         }
                     }
 

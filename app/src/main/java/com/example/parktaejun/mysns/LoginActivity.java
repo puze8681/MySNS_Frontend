@@ -69,10 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                                              startActivity(loginIntent);
                                              finish();
                                          }
-                                     }
-                                     else {
+                                     } else if(response.code() == 400){
                                          progress_dialog.dismiss();
-                                         Toast.makeText(getApplicationContext(), "알 수 없는 오류 ... ", Toast.LENGTH_SHORT).show();
+                                         Toast.makeText(getApplicationContext(), "아이디 혹은 비밀번호가 옳지 않습니다 ... ", Toast.LENGTH_SHORT).show();
+                                     } else{
+                                         progress_dialog.dismiss();
+                                         Toast.makeText(getApplicationContext(), "UNKNOWN ERR ... ", Toast.LENGTH_SHORT).show();
                                      }
                                  }
 

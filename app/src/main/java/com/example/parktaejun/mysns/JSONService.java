@@ -15,9 +15,9 @@ public interface JSONService {
 
     @FormUrlEncoded
     @POST("/auth/login")
-    Call<User> login(@Field("id") String user_id, @Field("password") String user_pw);
+    Call<User> login(@Field("user_id") String user_id, @Field("user_password") String user_pw);
 
     @FormUrlEncoded
     @POST("/auth/register")
-    Call<User> register(@Field("id") String user_id, @Field("password") String user_pw, @Field("name") String user_name);
+    Call<User> register(@Field("user_id") String user_id, @Field("user_password") String user_pw, @Field("user_name") String user_name);
 }

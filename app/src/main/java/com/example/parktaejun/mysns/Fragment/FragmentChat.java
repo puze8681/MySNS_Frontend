@@ -7,13 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.parktaejun.mysns.R;
+
 /**
  * Created by parktaejun on 2017. 2. 17..
  */
 
-public class FragmentChatting extends Fragment {
+public class FragmentChat extends Fragment {
 
-    public FragmentChatting(){
+    public FragmentChat(){
 
     }
 
@@ -24,7 +26,7 @@ public class FragmentChatting extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-        View view = inflater.inflate(R.layout.fragment_chatting, container, false);
+        View view = inflater.inflate(R.layout.fragment_chat, container, false);
         return view;
     }
 }

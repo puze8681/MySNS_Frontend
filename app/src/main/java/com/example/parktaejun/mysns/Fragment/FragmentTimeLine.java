@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.parktaejun.mysns.R;
+
 /**
  * Created by parktaejun on 2017. 2. 17..
  */
