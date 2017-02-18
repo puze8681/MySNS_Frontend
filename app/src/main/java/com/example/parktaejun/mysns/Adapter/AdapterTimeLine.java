@@ -2,6 +2,8 @@ package com.example.parktaejun.mysns.Adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +58,11 @@ public class AdapterTimeLine extends BaseAdapter{
         }else {
             view = LayoutInflater.from(context).inflate(R.layout.item_chat_room_profile_view, null);
             TextView post_name = (TextView) view.findViewById(R.id.profile_text);
+            TextView post_time = (TextView) view.findViewById(R.id.post_time);
+            TextView post_context = (TextView) view.findViewById(R.id.post_context);
             post_name.setText(LoginActivity.pref.getString("userName", ""));
+            post_time.setGravity(Gravity.RIGHT);
+            post_context.setMovementMethod(new ScrollingMovementMethod());
         }
 
         return view;
