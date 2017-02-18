@@ -49,28 +49,10 @@ public class FragmentChat extends Fragment {
         chat_edit = (EditText) view.findViewById(R.id.chat_edit);
         chat_list = (ListView) view.findViewById(R.id.chatroom_list);
 
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
-        items.add(new User("박태준"));
-        items.add(new User("윤영채"));
+        items.add(new User("검색"));
+        items.add(new User("내 프로필"));
+        items.add(new User("나"));
+        items.add(new User("친구"));
 
         listAdapter = new AdapterChatRoomList(getContext(), items);
         chat_list.setAdapter(listAdapter);

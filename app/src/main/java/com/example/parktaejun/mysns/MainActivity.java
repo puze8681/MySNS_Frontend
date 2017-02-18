@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
 
         tabLayout.addTab(tabLayout.newTab().setText("게시물!").setTag("time_lime"));
-        tabLayout.addTab(tabLayout.newTab().setText("친구.").setTag("chat"));
+        tabLayout.addTab(tabLayout.newTab().setText("친구.").setTag("chat_room"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         setSupportActionBar(toolbar);

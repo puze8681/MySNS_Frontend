@@ -1,6 +1,7 @@
-package com.example.parktaejun.mysns;
+package com.example.parktaejun.mysns.Server;
 
 import com.example.parktaejun.mysns.Data.User;
+import com.example.parktaejun.mysns.Server.ServerUser;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -15,9 +16,9 @@ public interface JSONService {
 
     @FormUrlEncoded
     @POST("/auth/login")
-    Call<User> login(@Field("user_id") String user_id, @Field("user_password") String user_pw);
+    Call<ServerUser> login(@Field("user_id") String user_id, @Field("user_password") String user_pw);
 
     @FormUrlEncoded
     @POST("/auth/register")
-    Call<User> register(@Field("user_id") String user_id, @Field("user_password") String user_pw, @Field("user_name") String user_name);
+    Call<ServerUser> register(@Field("user_id") String user_id, @Field("user_password") String user_pw, @Field("user_name") String user_name);
 }

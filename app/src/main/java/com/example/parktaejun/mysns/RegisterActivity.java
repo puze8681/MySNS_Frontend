@@ -7,7 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.parktaejun.mysns.Data.User;
+import com.example.parktaejun.mysns.Server.JSONService;
+import com.example.parktaejun.mysns.Server.ServerUser;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<User> call = service.register(user_id.getText().toString(), user_pw.getText().toString(), user_name.getText().toString());
-                call.enqueue(new Callback<User>() {
+                Call<ServerUser> call = service.register(user_id.getText().toString(), user_pw.getText().toString(), user_name.getText().toString());
+                call.enqueue(new Callback<ServerUser>() {
                     @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
+                    public void onResponse(Call<ServerUser> call, Response<ServerUser> response) {
                         if(response.code() == 200){
-                            User user = response.body();
+                            ServerUser user = response.body();
                             if(user != null){
                                 Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다 ... ", Toast.LENGTH_SHORT).show();
                                 finish();
@@ -59,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<User> call, Throwable t) {
+                    public void onFailure(Call<ServerUser> call, Throwable t) {
                         Toast.makeText(getApplicationContext(), "요청을 전송할 수 없습니다 ... ", Toast.LENGTH_SHORT).show();
                         finish();
                     }
