@@ -55,6 +55,8 @@ public class AdapterTimeLine extends BaseAdapter{
         View view = null;
         if(position == 0){
             view = LayoutInflater.from(context).inflate(R.layout.item_timeline_post, null);
+            TextView write = (TextView) view.findViewById(R.id.write);
+            write.setText("글 쓰기");
         }else {
             view = LayoutInflater.from(context).inflate(R.layout.item_chat_room_profile_view, null);
             TextView post_name = (TextView) view.findViewById(R.id.profile_text);

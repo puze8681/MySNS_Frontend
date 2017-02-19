@@ -16,6 +16,7 @@ import com.example.parktaejun.mysns.ChatInsideActivity;
 import com.example.parktaejun.mysns.Data.TimeLine;
 import com.example.parktaejun.mysns.Data.User;
 import com.example.parktaejun.mysns.R;
+import com.example.parktaejun.mysns.TimeLineInsideActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class FragmentTimeLine extends Fragment {
 
     private ListView timeline_list;
     private AdapterTimeLine listAdapter;
-    private List<TimeLine> items = new ArrayList<>();
+    public static List<TimeLine> items = new ArrayList<>();
 
     public FragmentTimeLine(){
 
@@ -54,7 +55,7 @@ public class FragmentTimeLine extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         String name = items.get(i).getName();
-                        Intent chatIntent = new Intent(getActivity(), ChatInsideActivity.class);
+                        Intent chatIntent = new Intent(getActivity(), TimeLineInsideActivity.class);
                         startActivity(chatIntent);
                     }
                 }

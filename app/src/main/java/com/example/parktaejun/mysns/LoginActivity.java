@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         register_btn = (Button) findViewById(R.id.register_btn);
 
         retrofit = new Retrofit.Builder().baseUrl("http://nh.applepi.kr").addConverterFactory(GsonConverterFactory.create()).build();
-        final JSONService service = retrofit.create(JSONService.class);
+        final JSONService login_service = retrofit.create(JSONService.class);
 
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                 progress_dialog.setMessage("로그인 중입니다 ... ");
                 progress_dialog.show();
 
-                Call<ServerUser> call = service.login(user_id.getText().toString(), user_pw.getText().toString());
+                Call<ServerUser> call = login_service.login(user_id.getText().toString(), user_pw.getText().toString());
                 call.enqueue(new Callback<ServerUser>() {
                                  @Override
                                  public void onResponse(Call<ServerUser> call, Response<ServerUser> response) {
