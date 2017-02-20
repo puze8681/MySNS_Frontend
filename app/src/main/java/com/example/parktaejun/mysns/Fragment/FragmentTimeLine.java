@@ -112,7 +112,7 @@ public class FragmentTimeLine extends Fragment implements SwipeRefreshLayout.OnR
                     for(ServerPoster post : posts){
                         String[] return_temp = post.post_time.substring(0,post.post_time.length()-8).split("T");
                         String return_val = return_temp[0] + " " + return_temp[1];
-                        initList(post.post_name, post.post_title, post.post_time, post.post_context);
+                        initList(post.post_name, post.post_title, return_val, post.post_context);
                     }
                 }
             }
