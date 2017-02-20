@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         retrofit = new Retrofit.Builder().baseUrl("http://nh.applepi.kr").addConverterFactory(GsonConverterFactory.create()).build();
         final JSONService login_service = retrofit.create(JSONService.class);
 
-        register_btn.setOnClickListener(new View.OnClickListener() {
+        login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progress_dialog = new ProgressDialog(LoginActivity.this);
@@ -99,6 +99,13 @@ public class LoginActivity extends AppCompatActivity {
                                      Toast.makeText(getApplicationContext(), "요청 불가 ... ", Toast.LENGTH_SHORT).show();
                                  }
                              });
+            }
+        });
+        register_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
             }
         });
     }
